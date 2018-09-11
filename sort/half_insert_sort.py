@@ -25,7 +25,6 @@ def inner_insert(origin, num):
     index = length / 2
     if num < origin[index]:
         if index > 0:
-            # origin[: index+1] = inner_insert(origin[: index], num)
             left = inner_insert(origin[: index], num)
             origin = left + origin[index:]
         else:
@@ -40,18 +39,14 @@ def inner_insert(origin, num):
     return origin
 
 
-
-
 def main():
     for item in range(0, 5):
         print("----------"*4)
-        # unorder = [76, 31, 88, 94, 53]
         unorder = [random.randrange(0, 99) for _ in range(0, 5)]
         print("before sort: {}".format(unorder))
         result = half_sort(unorder)
         print("After sort: {}".format(result))
-        # assert result == insert_sort(unorder)
-
+        
 
 if __name__ == '__main__':
     main()
